@@ -22,10 +22,23 @@ main{
     text-align: center;
 }
 
-div{
+#insert, #lista{
     border: solid gray;
     border-radius: 15vh;
     padding: 20%;
     margin-inline: 5vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
 }
+
+
+
+.bottoni{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
 

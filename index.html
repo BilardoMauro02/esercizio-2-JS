@@ -13,8 +13,17 @@
     
     <main>
         <div id="insert">
+            
             <input type="text" id="oggetto">
+            
+            <div class="bottoni">
+                <button id="meno" onclick="cambiaQuantita(event)">-</button>
+                <h3 id="quantita">0</h3>
+                <button id="piu" onclick="cambiaQuantita(event)">+</button>
+            </div>
+
             <button onclick="aggiungiAlCarrello()">aggiungi</button>
+            
         </div>
     
         <div id="lista">
