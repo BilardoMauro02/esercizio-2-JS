@@ -13,7 +13,17 @@ function aggiornaCarrello(){
     lista.textContent = "";
     listaSpesa.forEach(item => {
         const li = document.createElement("li");
+        
+        const rimuovi = document.createElement("button");
+        rimuovi.textContent = "RIMUOVI";
+
+        rimuovi.onclick = () => {
+            listaSpesa = listaSpesa.filter(p => p.id !== item.id);
+            aggiornaCarrello();
+        }
+
         li.textContent = `${item.nome}: ${item.quantita}`;
+        li.appendChild(rimuovi);
         lista.appendChild(li);
         totale += item.prezzo * item.quantita;
     });
@@ -125,7 +135,6 @@ function showCatalog() {
         card.appendChild(immagine);
         card.appendChild(bottoni);
         card.appendChild(aggiungi);
-
 
         catalogo.appendChild(card);
     });
