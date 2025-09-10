@@ -9,11 +9,11 @@ const productCatalog = [
 function aggiornaCarrello(){
     let lista = document.getElementById("listaSpesa");
     lista.textContent = "";
-    for (let [prodotto, quantita] of listaSpesa){
-        let li = document.createElement("li");
-        li.textContent = prodotto + ": " + quantita;
+    listaSpesa.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nome}: ${item.quantita}`;
         lista.appendChild(li);
-    }
+    });
 }
 
 function svuotaCarrello(){
@@ -81,15 +81,31 @@ function showCatalog() {
         const aggiungi = document.createElement("button");
 
         aggiungi.textContent = "Aggiungi";
+        aggiungi.dataset.id = prodotto.id
+
+        //AL CLICK RECUPERA L'ID PER VEDERE SE è già PRESENTE
         aggiungi.onclick = () => {
-        if (count > 0) {
-            listaSpesa.push([prodotto.name, count]);
+
+            const nome = prodotto.name;
+            const id = prodotto.id;
+
+            //UTILIZZO IL FIND PER TROVARE L'ID E FARE IL CONFRONTO
+            const giàPresente = listaSpesa.find(item => item.id == id);
+            
+            if (giàPresente) {
+                giàPresente.quantita += count;
+                aggiornaCarrello();
+            }
+
+            else if (count > 0) {
+            listaSpesa.push({ id: id, nome: nome, quantita: count });
             aggiornaCarrello();
             count = 0;
             quantita.textContent = "0";
-        } else {
-            alert("Seleziona almeno 1 quantità");
-        }
+            } 
+            else {
+                alert("Seleziona almeno 1 quantità");
+            }
         };
 
         //AGGIUNGE ALLA FINE DI TUTTO STO CASINO GLI ELEMENTI CHE COMPONGONO IL PRODOTTO
