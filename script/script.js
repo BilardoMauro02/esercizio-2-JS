@@ -112,7 +112,7 @@ function showCatalog() {
             //UTILIZZO IL FIND PER TROVARE L'ID E FARE IL CONFRONTO
             const giàPresente = listaSpesa.find(item => item.id == id);
             
-            if (giàPresente) {
+            if (giàPresente && count > 0) {
                 giàPresente.quantita += count;
                 aggiornaCarrello();
             }
