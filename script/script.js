@@ -1,7 +1,7 @@
 let listaSpesa = [];
 
 const productCatalog = [
-{ id: 1, name: "Notebook", price: 10, imageUrl: "./img/notebook.webp" },
+{ id: 1, name: "Notebook", price: 800, imageUrl: "./img/notebook.webp" },
 { id: 2, name: "Pen", price: 2, imageUrl: "./img/pendrive.jpg" },
 { id: 3, name: "Backpack", price: 30, imageUrl: "./img/gormiti.png" }
 ];
@@ -44,7 +44,7 @@ function showCatalog() {
         titolo.textContent = prodotto.name;
 
         const prezzo = document.createElement("p");
-        prezzo.textContent = `Prezzo: ${prodotto.price}`;
+        prezzo.textContent = `Prezzo: €${prodotto.price}`;
 
         const immagine = document.createElement("img");
         immagine.src = prodotto.imageUrl;
