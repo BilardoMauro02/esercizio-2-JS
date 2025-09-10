@@ -8,12 +8,21 @@ const productCatalog = [
 
 function aggiornaCarrello(){
     let lista = document.getElementById("listaSpesa");
+    let totale = 0;
+
     lista.textContent = "";
     listaSpesa.forEach(item => {
         const li = document.createElement("li");
         li.textContent = `${item.nome}: ${item.quantita}`;
         lista.appendChild(li);
+        totale += item.prezzo * item.quantita;
     });
+    if (listaSpesa.length > 0){ 
+        let prezzoTotale = document.createElement("h3");
+        prezzoTotale.textContent = `Totale: €${totale}`;
+        lista.appendChild(prezzoTotale);    
+    }
+    
 }
 
 function svuotaCarrello(){
@@ -88,6 +97,7 @@ function showCatalog() {
 
             const nome = prodotto.name;
             const id = prodotto.id;
+            const prezzo = prodotto.price;
 
             //UTILIZZO IL FIND PER TROVARE L'ID E FARE IL CONFRONTO
             const giàPresente = listaSpesa.find(item => item.id == id);
@@ -98,14 +108,15 @@ function showCatalog() {
             }
 
             else if (count > 0) {
-            listaSpesa.push({ id: id, nome: nome, quantita: count });
-            aggiornaCarrello();
-            count = 0;
-            quantita.textContent = "0";
+                listaSpesa.push({ id: id, nome: nome, quantita: count, prezzo: prezzo});
+                aggiornaCarrello();
+                
             } 
             else {
                 alert("Seleziona almeno 1 quantità");
             }
+            count = 0;
+            quantita.textContent = "0";
         };
 
         //AGGIUNGE ALLA FINE DI TUTTO STO CASINO GLI ELEMENTI CHE COMPONGONO IL PRODOTTO
