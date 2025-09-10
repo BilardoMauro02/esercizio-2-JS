@@ -159,6 +159,7 @@ main {
   border-radius: 5px;
   font-weight: bold;
   color: #130f40;
+  text-align: center;
 }
 
 #lista button {
@@ -174,9 +175,4 @@ main {
 
 #lista button:hover {
   background-color: #a93226;
-}
-
-img {
-  max-width: 10%;
-  height: auto;
 }
