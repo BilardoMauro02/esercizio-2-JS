@@ -1,44 +1,182 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    background: linear-gradient(to right, rgb(170, 185, 193),rgb(171, 171, 230));
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  padding: 1rem;
 }
 
-header{
-    display: grid;
-    grid-template-columns: 1fr;
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+/* Header */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-main{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 15vh;
-    text-align: center;
+h1 {
+  font-size: 2rem;
 }
 
-#insert, #lista{
-    border: solid gray;
-    border-radius: 15vh;
-    padding: 20%;
-    margin-inline: 5vw;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
+/* Main layout */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-
-
-.bottoni{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+/* Catalogo prodotti */
+#catalogo {
+  flex: 2;
+  max-width: 800px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+#prodotti {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
 
+.prodotto {
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
+.prodotto img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
 
+.prodotto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.prodotto p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.prodotto button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prodotto button:hover {
+  background-color: #219150;
+}
+
+/* Quantità e aggiunta */
+.bottoni {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bottoni button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.bottoni button:hover {
+  background-color: #2980b9;
+}
+
+#quantita {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+#catalogo > button {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+#catalogo > button:hover {
+  background-color: #d35400;
+}
+
+/* Lista della spesa */
+#lista {
+  flex: 1;
+  max-width: 300px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#lista h2 {
+  margin-bottom: 1rem;
+}
+
+#listaSpesa {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+#listaSpesa li {
+  background-color: #dff9fb;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #130f40;
+}
+
+#lista button {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+#lista button:hover {
+  background-color: #a93226;
+}
+
+img {
+  max-width: 10%;
+  height: auto;
+}
