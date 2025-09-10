@@ -23,3 +23,13 @@
 
 ### ✅ Svuota carrello
 - Il bottone `svuota` cancella tutti gli elementi da `listaSpesa` e aggiorna la visualizzazione.
+
+## 🧠 Note tecniche
+
+- Il catalogo viene generato al `window.onload` tramite la funzione `showCatalog()`.
+- La funzione `aggiornaCarrello()` si occupa di:
+  - Visualizzare gli articoli nel carrello
+  - Calcolare il totale
+  - Gestire la rimozione
+
+---
